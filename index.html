@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>FAGE WARS</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <canvas id="game-canvas" width="1400" height="860" aria-label="Fage Wars battlefield"></canvas>
+
+      <div class="hud">
+        <div class="hud-chip hud-chip--primary" id="map-chip"></div>
+        <div class="hud-stack hud-stack--left">
+          <section class="panel panel--compact" id="status-panel"></section>
+          <section class="panel panel--compact" id="selection-panel"></section>
+        </div>
+
+        <div class="hud-stack hud-stack--right">
+          <section class="panel panel--compact" id="control-panel"></section>
+          <section class="panel panel--compact" id="faction-panel"></section>
+        </div>
+
+        <div class="toast" id="toast"></div>
+      </div>
+
+      <div class="overlay" id="menu-overlay">
+        <div class="overlay-card overlay-card--menu">
+          <div class="menu-header">
+            <div>
+              <p class="eyebrow">Handcrafted Campaign</p>
+              <h1>FAGE WARS</h1>
+              <p class="subtitle">
+                Bright one-shot strategy across 20 handcrafted maps, with softer board styling and fast territory control.
+              </p>
+            </div>
+            <div class="difficulty-select" id="difficulty-select"></div>
+          </div>
+          <div class="campaign-grid" id="campaign-grid"></div>
+          <div class="menu-footer">
+            <div class="menu-note" id="save-note"></div>
+            <button class="button button--ghost" id="reset-progress-button" type="button">
+              Reset Campaign
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay overlay--hidden" id="result-overlay">
+        <div class="overlay-card overlay-card--result">
+          <p class="eyebrow" id="result-kicker"></p>
+          <h2 id="result-title"></h2>
+          <p class="subtitle" id="result-body"></p>
+          <div class="result-actions">
+            <button class="button" id="result-primary" type="button"></button>
+            <button class="button button--ghost" id="result-secondary" type="button"></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="overlay overlay--hidden" id="info-overlay">
+        <div class="overlay-card overlay-card--info">
+          <div class="info-header">
+            <div>
+              <p class="eyebrow">Info Window</p>
+              <h2 id="info-title">How To Play</h2>
+            </div>
+            <button class="button button--ghost" id="info-close-button" type="button">
+              Close
+            </button>
+          </div>
+
+          <div class="info-grid">
+            <section class="info-section">
+              <p class="label">Mission</p>
+              <p class="value" id="info-mission"></p>
+            </section>
+
+            <section class="info-section">
+              <p class="label">Controls</p>
+              <div class="info-copy" id="info-controls"></div>
+            </section>
+
+            <section class="info-section">
+              <p class="label">Rules</p>
+              <div class="info-copy" id="info-rules"></div>
+            </section>
+
+            <section class="info-section">
+              <p class="label">Board Pressure</p>
+              <div class="faction-list faction-list--info" id="info-factions"></div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
